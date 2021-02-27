@@ -1,8 +1,8 @@
 defmodule Rocketpay.Users.List do
   alias Rocketpay.{Repo, User}
 
-  def call(params) do
-    Repo.all(User)
-    |> IO.inspect()
+  def call(_params) do
+    users = Repo.all(User)
+    {:ok, %{list_users: users}}
   end
 end
